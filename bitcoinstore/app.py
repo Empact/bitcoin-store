@@ -8,7 +8,7 @@ from bitcoinstore.api import api
 from bitcoinstore.extensions import db
 from bitcoinstore.extensions import debug_toolbar
 from bitcoinstore.extensions import flask_static_digest
-
+from bitcoinstore.extensions import scheduler
 
 def create_celery_app(app=None):
     """
@@ -70,6 +70,8 @@ def extensions(app):
     debug_toolbar.init_app(app)
     db.init_app(app)
     flask_static_digest.init_app(app)
+    scheduler.init_app(app)
+    scheduler.start()
 
     return None
 

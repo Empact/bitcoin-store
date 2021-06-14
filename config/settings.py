@@ -25,3 +25,6 @@ CELERY_CONFIG = {
     "result_backend": REDIS_URL,
     "include": [],
 }
+
+# flask_apscheduler
+SCHEDULER_API_ENABLED = True
